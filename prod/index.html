@@ -63,7 +63,9 @@
     <div id="content_header"></div>
     <div id="site_content">
       <div class="sidebar">
-         <div id="dvPanel"></div></div>
+         <div id="dvPanel"></div>
+         <div id="statusMsg" style="font-size: 15px;padding-top: 105px;font-weight: bold;"></div>
+	</div>
       <div id="content">
 		<table border="0" cellpadding="0" cellspacing="3">
 			<tr>
@@ -116,18 +118,14 @@
 		  });
 		  // Try HTML5 geolocation.
 		  if (navigator.geolocation) {
-			   alert('if');
 			navigator.geolocation.getCurrentPosition(function(position) {
 				console.log("position",position);
-				alert(position.coords.longitude);
 				var geocoder = new google.maps.Geocoder;
 				geocodeLatLng(geocoder, position);
 			}, function() {
-			  alert('error');
 			  handleLocationError(true, infoWindow, map.getCenter());
 			});
 		  } else {
-			  alert('else error');
 			// Browser doesn't support Geolocation
 			handleLocationError(false, infoWindow, map.getCenter());
 		  }
@@ -198,7 +196,7 @@
                     dvDistance.innerHTML += "Duration:" + duration;
 
                 } else {
-                    alert("Unable to find the distance via road.");
+                    document.getElementById('statusMsg').innerHTML = "Unable to find the distance via road.";
                 }
             });
       }
