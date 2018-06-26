@@ -116,6 +116,7 @@
 		  });
 		  // Try HTML5 geolocation.
 		  if (navigator.geolocation) {
+			   alert('if');
 			navigator.geolocation.getCurrentPosition(function(position) {
 				console.log("position",position);
 				alert(position.coords.longitude);
@@ -126,6 +127,7 @@
 			  handleLocationError(true, infoWindow, map.getCenter());
 			});
 		  } else {
+			  alert('else error');
 			// Browser doesn't support Geolocation
 			handleLocationError(false, infoWindow, map.getCenter());
 		  }
