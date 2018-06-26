@@ -118,6 +118,7 @@
 		  if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
 				console.log("position",position);
+				alert(position.coords.longitude);
 				var geocoder = new google.maps.Geocoder;
 				geocodeLatLng(geocoder, position);
 			}, function() {
