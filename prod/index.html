@@ -107,7 +107,6 @@
   </div>
     <script type="text/javascript">
       function initMap() {
-		  alert("enter");
 		  var directionsDisplay = new google.maps.DirectionsRenderer;
 		  var directionsService = new google.maps.DirectionsService;
 		  google.maps.event.addDomListener(window, 'load', function () {
@@ -117,17 +116,16 @@
 		  });
 		  // Try HTML5 geolocation.
 		  if (navigator.geolocation) {
-			    alert("if");
 			navigator.geolocation.getCurrentPosition(function(position) {
 				console.log("position",position);
 				alert(position.coords.longitude);
 				var geocoder = new google.maps.Geocoder;
 				geocodeLatLng(geocoder, position);
 			}, function() {
+			  alert('error');
 			  handleLocationError(true, infoWindow, map.getCenter());
 			});
 		  } else {
-			   alert("else");
 			// Browser doesn't support Geolocation
 			handleLocationError(false, infoWindow, map.getCenter());
 		  }
@@ -151,14 +149,12 @@
       function GetRoute() {
 			var directionsDisplay = new google.maps.DirectionsRenderer;
 		    var directionsService = new google.maps.DirectionsService;
-			            var mumbai = new google.maps.LatLng(18.9750, 72.8258);
-
-			 var mapOptions = {
+			var mumbai = new google.maps.LatLng(18.9750, 72.8258);
+			var mapOptions = {
                 zoom: 7,
                 center: mumbai
             };
-			            map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
+			map = new google.maps.Map(document.getElementById('map'), mapOptions);
 			directionsDisplay.setMap(map);
 			document.getElementById('dvPanel').innerHTML = "";
             directionsDisplay.setPanel(document.getElementById('dvPanel'));
