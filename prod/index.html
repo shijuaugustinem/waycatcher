@@ -60,14 +60,10 @@
         </ul>
       </div> 
     </div>
-    <div id="content_header"></div>
+    <div id="content_header"></div><br /><br />
     <div id="site_content">
-      <div class="sidebar">
-         <div id="dvPanel"></div>
-         <div id="statusMsg" style="font-size: 15px;padding-top: 105px;font-weight: bold;"></div>
-	</div>
-      <div id="content">
-		<table border="0" cellpadding="0" cellspacing="3">
+	  <div>
+	     <table border="0" cellpadding="0" cellspacing="3" style="margin: 0px auto;">
 			<tr>
 				<td colspan="2" style="font-size: 16px;">
 					Source:
@@ -79,6 +75,25 @@
 					<hr />
 				</td>
 			</tr>
+		 </table>
+	  </div>
+      <div class="sidebar" id="sidebar">
+         <div id="dvPanel"></div>
+         <div id="statusMsg" style="font-size: 15px;padding-top: 105px;font-weight: bold;"></div>
+	  </div>
+      <div id="content">
+		<table border="0" cellpadding="0" cellspacing="3" style="width:100%">
+			<!--<tr>
+				<td colspan="2" style="font-size: 16px;">
+					Source:
+					<input type="text" id="txtSource" value="Kakkanad, Kerala, India" style="width: 200px" onfocus="this.select();" />
+					&nbsp; Destination:
+					<input type="text" id="txtDestination" value="Adimali, Kerala, India" style="width: 200px" onfocus="this.select();" />
+					<br /><br /><br />
+					<input type="button" value="GO" onclick="GetRoute()" style="width: 100%;height: 50px;"/>
+					<hr />
+				</td>
+			</tr>-->
 			<tr>
 				<td colspan="2" style="font-size: 16px;font-weight: bold;">
 					<div id="dvDistance">
@@ -164,6 +179,8 @@
 		    });
 	  }
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        document.getElementById('sidebar').style.display="block";
+        document.getElementById('content').style.display="block";
         var selectedMode = document.getElementById('mode').value;
 		var source = document.getElementById("txtSource").value;
         var destination = document.getElementById("txtDestination").value;		

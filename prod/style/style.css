@@ -198,7 +198,8 @@ ul#menu li a:hover
 .sidebar
 { float: right;
   width: 40%;
-  padding: 20px 25px 15px 15px;}
+  padding: 20px 25px 15px 15px;
+  display:none;}
 
 .sidebar ul
 { width: 178px; 
@@ -224,7 +225,8 @@ ul#menu li a:hover
 { text-align: left;
   width: 60%;
   float: left;
-  padding: 20px 10px 15px 0px;}
+  padding: 20px 10px 15px 0px;
+  display:none;}
 
 #footer
 { width: 100%;
